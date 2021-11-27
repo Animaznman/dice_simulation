@@ -33,9 +33,12 @@ class d4(dice):
     /______\\
     """
     }
-    def __init__(self, value = random.randint(1,4)):
+    def __init__(self, value=None): #It kind of sucks there's no method overloading in python
         super().__init__()
-        self.value = value
+        if value is None:
+            self.value = random.randint(1,4)
+        else:
+            self.value = value
 
     def roll(self):
         self.value = random.randint(1,4)
@@ -82,8 +85,12 @@ class d6(dice):
     └──────┘
     """
     }
-    def __init__(self, value = random.randint(1,6)):
-        self.value = value
+    def __init__(self, value=None):
+        super().__init__()
+        if value is None:
+            self.value = random.randint(1,6)
+        else:
+            self.value = value
 
     def roll(self):
         self.value = random.randint(1,6)
@@ -142,8 +149,12 @@ class d8(dice):
       \\──/
     """
     }
-    def __init__(self, value = random.randint(1,8)):
-        self.value = value
+    def __init__(self, value=None):
+        super().__init__()
+        if value is None:
+            self.value = random.randint(1,8)
+        else:
+            self.value = value
 
     def roll(self):
         self.value = random.randint(1,8)
@@ -214,8 +225,12 @@ class d10(dice):
      \\____/
     """
     }
-    def __init__(self, value = random.randint(1,10)):
-        self.value = value
+    def __init__(self, value=None):
+        super().__init__()
+        if value is None:
+            self.value = random.randint(1,10)
+        else:
+            self.value = value
 
     def roll(self):
         self.value = random.randint(1,10)
@@ -298,8 +313,12 @@ class d12(dice):
       \\_/
     """
     }
-    def __init__(self, value = random.randint(1,12)):
-        self.value = value
+    def __init__(self, value=None):
+        super().__init__()
+        if value is None:
+            self.value = random.randint(1,12)
+        else:
+            self.value = value
 
     def roll(self):
         self.value = random.randint(1,12)
@@ -430,8 +449,12 @@ class d20(dice):
       \\__/
     """
     }
-    def __init__(self, value = random.randint(1,20)):
-        self.value = value
+    def __init__(self, value=None):
+        super().__init__()
+        if value is None:
+            self.value = random.randint(1,20)
+        else:
+            self.value = value
 
     def roll(self):
         self.value = random.randint(1,20)
