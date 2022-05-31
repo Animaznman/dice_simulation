@@ -23,6 +23,12 @@ def sum(bag):
             sum+=dice_object.value
     return sum
 
+#Displays the current contents of the bag
+def display(dice_bag):
+    print("Here is what your bag rolled: \n")
+    for dice_type in dice_bag:
+        for dice_object in dice_bag[dice_type]:
+            dice_object.display()
 # Rerandomizes current bag of dice by simulating a roll
 def reroll(bag):
     for dice_type in bag:
@@ -42,7 +48,7 @@ def drop_n_min(bag):
     n = int(input("Input an integer number for how many of the highest values you would like to drop\n"))
     sum_of_maxs = 0
     for i in range(n):
-        sum_of_mins += max(max(bag.values()))
+        sum_of_maxs += max(max(bag.values()))
     return sum(bag)-sum_of_maxs
 
 # Keeps n maximum values from bag and omits the rest from sum
@@ -80,14 +86,12 @@ def keep_success(bag):
 
 def main():
     dice_bag = select()
+    display(dice_bag)
 
-    print("Here is what your bag rolled: \n")
-    for dice_type in dice_bag:
-        for dice_object in dice_bag[dice_type]:
-            dice_object.display()
 
     print("Sum of bag is: "+str(sum(dice_bag)))
-    choices = [ "print(\"Now exiting...\")", "reroll(dice_bag)", "select()", "drop_n_min(dice_bag)", "drop_n_max(dice_bag)",
+    choices = [ "print(\"Now exiting...\")",
+    "reroll(dice_bag)", "select()", "drop_n_min(dice_bag)", "drop_n_max(dice_bag)",
     "keep_n_max(dice_bag)", "keep_success(dice_bag)"]
     choice = 10
     while choice > 0:
